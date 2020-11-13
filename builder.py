@@ -97,7 +97,7 @@ for i, sub_folder in enumerate(sub_folders):
             previous_typeface = sub_folders[(i-1)%len(sub_folders)],
             next_typeface = sub_folders[(i+1)%len(sub_folders)],
             font_info = json.load(input_file),
-            root = "../../",
+            root = "../..",
             text = get_md(base/"entries"/"type"/sub_folder/f"{sub_folder}.md"),
             folder = sub_folder,
             images_data = images_data,

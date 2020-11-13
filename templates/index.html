@@ -10,7 +10,7 @@
         {% for entry in type_entries %}
         <a href="type/{{type_entries[entry][0]}}" class="entry hvr font brdr" data-font="{{type_entries[entry][1]}}">
             {% if type_entries[entry][1] %}
-                <img height="80px" src="../../assets/{{type_entries[entry][1]}}">
+                <img height="80px" src="assets/{{type_entries[entry][1]}}">
             {% else %}
                 <span class="font-title" data-font-name="{{type_entries[entry][0]}}">{{type_entries[entry][0]}}</span>
             {% endif %}
