@@ -1,11 +1,12 @@
 import markdown
 import json
 
+from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 from pathlib import Path
 from bs4 import BeautifulSoup
 
-base = Path(__file__).parent
+base = Path(__file__).parent.parent
 
 env = Environment(loader=FileSystemLoader(str(base/"templates")))
 env.trim_blocks = True
@@ -31,15 +32,6 @@ def render_template(template_name, context={}, outdir=base, sub_folder=None):
         outdir.mkdir()
     with open(outdir/'index.html', 'w+') as outputHtml:
         outputHtml.write(prettify(parsedTemplate))
-
-# def get_pictures():
-#     collector = {}
-#     for json_file in (base/"entries"/"type").glob("*/pictures.json"):
-#         with open(json_file, "r+") as inputFile:
-#             collector[json_file.parent.stem] = json.load(inputFile)
-#     return collector
-
-from datetime import datetime
 
 def ord_ending(myDate):
     date_suffix = ["th", "st", "nd", "rd"]

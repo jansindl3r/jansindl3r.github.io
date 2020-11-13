@@ -1,6 +1,6 @@
 {% extends 'main.html' %}
 {% block css %}
-<link rel="stylesheet" href="{{root}}/detail.css">
+<link rel="stylesheet" href="{{root}}/css/detail.css">
     {% for css_link in font_info.css %}
         <link rel="stylesheet" href="{{root}}/{{css_link}}">
     {% endfor %}
@@ -42,7 +42,7 @@
         <script type=text/javascript>
             var images_data = {{images_data}}
         </script>
-        <script src="{{root}}/assets/detail_script.js"></script>
+        <script src="{{root}}/scripts/detail_script.js"></script>
     {% endif %}
     {% if font_info.javascript %}
         <script src="{{root}}/{{font_info.javascript}}"></script>
