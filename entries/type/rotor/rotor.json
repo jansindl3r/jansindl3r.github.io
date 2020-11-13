@@ -1,0 +1,9 @@
+{   
+    "fontName": "rotor",
+    "link": "https://www.futurefonts.xyz/jan-sindler/rotor",
+    "buy": true,
+    "try": true,
+    "css": ["entries/type/rotor/rotor.css"],
+    "javascript": "assets/detail_script_fill_divs.js",
+    "styles": ["Black"]
+}

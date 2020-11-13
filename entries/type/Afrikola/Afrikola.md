@@ -1,0 +1,1 @@
+Afrikola explores possibilities how to interpret handwriting and what each family member contribute to the whole type family — what can be shared and what preserved. It started as a small excercise at workshop with [Afrika](https://www.afrika.to/) and turned into exciting journey full of discoveries.

@@ -1,0 +1,9 @@
+{
+    "Gabion_Headline": ["Gabion", "GabionHeadline.svg", ["Weights", "Italics"]],
+    "Gabion": ["Gabion", "Gabion.svg", ["Weights", "Italics"]],
+    "rotor": ["rotor", false, ["Rotation"]],
+    "Afrikola_Headline": ["Afrikola", "AfrikolaHeadline.svg", ["Italics"]],
+    "Afrikola": ["Afrikola", "Afrikola.svg", ["Weights"]],
+    "Integra": ["Integra", "Integra.svg", ["Weights", "Italics"]],
+    "Integra_Script": ["Integra", "IntegraScript.svg", ["Weights"]]
+}

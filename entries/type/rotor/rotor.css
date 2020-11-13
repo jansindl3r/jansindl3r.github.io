@@ -1,0 +1,31 @@
+@keyframes rotate_linear {
+    from {
+        font-variation-settings: "rttx" 0;
+    }
+    to {
+        font-variation-settings: "rttx" 360;
+    }
+} 
+
+.canvas > div > div:hover  {
+    animation-play-state: running;
+}
+
+.canvas > div > div {
+    position: relative;
+    animation: rotate 2s infinite linear;
+    animation-play-state: paused;
+    font-family: "rotor";
+    color: var(--nd-color);
+}
+
+.canvas > div > div:hover {
+    color: #fff;
+}
+
+.canvas > div > div::before {
+    font-family: "rotor overlay";
+    content: attr(data-content);
+    position: absolute;
+    color: #000;
+}

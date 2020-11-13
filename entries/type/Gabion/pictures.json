@@ -1,0 +1,254 @@
+{
+    "Afrikola_Display" = {
+        "As.svg": [
+            51,
+            0,
+            0,
+            0,
+            176.0,
+            "Display Regular Italic"
+        ],
+        "things.svg": [
+            0,
+            0,
+            13,
+            0,
+            179.0,
+            "Display Regular"
+        ],
+        "stood.svg": [
+            23,
+            0,
+            0,
+            0,
+            176.0,
+            "Display Medium Italic"
+        ],
+        "on.svg": [
+            0,
+            0,
+            0,
+            0,
+            178.0,
+            "Display Medium"
+        ],
+        "Friday,.svg": [
+            0,
+            0,
+            34,
+            0,
+            176.0,
+            "Display Bold Italic"
+        ],
+        "Mr.svg": [
+            39,
+            0,
+            0,
+            0,
+            176.0,
+            "Display Light Italic"
+        ],
+        "Biden.svg": [
+            0,
+            0,
+            0,
+            0,
+            176.0,
+            "Display Dark"
+        ],
+        "needed.svg": [
+            0,
+            42,
+            0,
+            0,
+            176.0,
+            "Display Dark Italic"
+        ],
+        "17.svg": [
+            0,
+            0,
+            0,
+            0,
+            180.0,
+            "Display Light"
+        ],
+        "more.svg": [
+            0,
+            0,
+            0,
+            0,
+            177.0,
+            "Display Bold"
+        ],
+        "would.svg": [
+            0,
+            7,
+            0,
+            0,
+            176.0,
+            "Display Regular Italic"
+        ],
+        "secure.svg": [
+            0,
+            0,
+            0,
+            0,
+            179.0,
+            "Display Regular"
+        ],
+        "victory.svg": [
+            0,
+            0,
+            29,
+            0,
+            176.0,
+            "Display Medium Italic"
+        ],
+        "by.svg": [
+            0,
+            0,
+            29,
+            0,
+            178.0,
+            "Display Medium"
+        ],
+        "winning.svg": [
+            0,
+            27,
+            34,
+            0,
+            176.0,
+            "Display Bold Italic"
+        ],
+        "any.svg": [
+            0,
+            0,
+            22,
+            0,
+            176.0,
+            "Display Light Italic"
+        ],
+        "two.svg": [
+            0,
+            0,
+            0,
+            0,
+            176.0,
+            "Display Dark"
+        ],
+        "of.svg": [
+            0,
+            105,
+            40,
+            0,
+            176.0,
+            "Display Dark Italic"
+        ],
+        "Georgia,.svg": [
+            0,
+            0,
+            13,
+            0,
+            180.0,
+            "Display Light"
+        ],
+        "North.svg": [
+            0,
+            0,
+            0,
+            0,
+            177.0,
+            "Display Bold"
+        ],
+        "or.svg": [
+            0,
+            18,
+            0,
+            0,
+            176.0,
+            "Display Regular Italic"
+        ],
+        "just.svg": [
+            0,
+            0,
+            25,
+            0,
+            179.0,
+            "Display Regular"
+        ],
+        "Pennsylvania.svg": [
+            0,
+            28,
+            29,
+            0,
+            176.0,
+            "Display Medium Italic"
+        ]
+    },
+    "Text" = {
+        "electoral.svg": [
+            0,
+            0,
+            0,
+            0,
+            220.0,
+            "not found!"
+        ],
+        "college.svg": [
+            0,
+            0,
+            16,
+            0,
+            220.0,
+            "not found!"
+        ],
+        "votes,.svg": [
+            0,
+            0,
+            0,
+            0,
+            236.0,
+            "not found!"
+        ],
+        "so.svg": [
+            0,
+            0,
+            0,
+            0,
+            218.0,
+            "not found!"
+        ],
+        "Carolina,.svg": [
+            0,
+            0,
+            0,
+            0,
+            220.0,
+            "not found!"
+        ],
+        "Arizona.svg": [
+            40,
+            0,
+            0,
+            0,
+            220.0,
+            "not found!"
+        ],
+        "and.svg": [
+            0,
+            7,
+            0,
+            0,
+            236.0,
+            "not found!"
+        ],
+        "Nevada,.svg": [
+            0,
+            0,
+            0,
+            0,
+            218.0,
+            "not found!"
+        ]
+    }
+}

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background: #0f0;
+        }
+
+        @font-face {
+            font-family: "rotor";
+            src: url("../entries/type/rotor/rotor-VF.ttf")  }
+        @font-face {
+            font-family: "rotor overlay";
+            src: url("../entries/type/rotor/rotor-VF-overlay.ttf")  }
+
+        @keyframes rotate {
+            0% {
+                
+                font-variation-settings: "rttx" 0;                
+                animation-timing-function: cubic-bezier(.4, .2, .8, .4);
+            }
+            25% {
+                
+                font-variation-settings: "rttx" 90;                
+                animation-timing-function: cubic-bezier(.2, .4, .4, .8);
+            }
+            50% {
+                
+                font-variation-settings: "rttx" 180;                
+                animation-timing-function: cubic-bezier(.4, .2, .8, .4);
+            }
+            75% {
+                font-variation-settings: "rttx" 270;                
+                animation-timing-function: cubic-bezier(.2, .4, .4, .8);
+            }
+            100% {
+                
+                font-variation-settings: "rttx" 360;                
+            }
+        }
+
+        #game {
+            text-rendering: optimizeSpeed;
+            z-index: 1;
+            font-family: "rotor";
+            animation: rotate 4s infinite;
+            font-size: 100vmin;
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+
+        #game::before, #game::after {
+            transform: translate(-50%, -50%);
+
+        }
+
+        #game::before {
+            z-index: 1;
+            content: attr(data-content);
+            position: absolute;
+            font-family: "rotor";
+            color: #fff;
+            left: 0;
+        }
+
+        #game::after {
+            z-index: 1;
+            content: attr(data-content);
+            position: absolute;
+            font-family: "rotor overlay";
+            color: #000;
+            left: 0;
+        }
+
+        #ui {
+            font-size: 50px;
+            font-family: "rotor";
+            position: absolute;
+            top: 50px;
+            width: 100%;
+            text-align: center;
+
+        }
+
+        @keyframes message {
+            0% {
+                margin-top: 0;
+                opacity: 0;
+            }
+            60% {
+                opacity: 1;
+            }
+            80%{
+                opacity: 1;
+            }
+            100%{
+                margin-top: -50vh;
+                opacity: 0;
+            }
+        }
+
+        #message {
+            font-family: "rotor";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            opacity: 0;
+            user-select: none;
+            pointer-events: none;
+            color: #fff;
+            white-space: nowrap;
+        }
+
+        .message-show {
+            animation: message 2s ease-in;
+        }
+
+        #score::before {
+            content: "score:";
+        }
+        #lives::before {
+            content: "lives:"
+        }
+
+        .full {
+            font-size: 20vw;
+        }
+
+        #legend {
+            padding: 1em;
+            font-size: 50%;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+    <div id="style">
+
+    </div>
+    <div id="message" class="full"></div>
+    <div id="game" data-content=""></div>
+    <div id="ui">
+        <div id="score"></div>
+        <div id="lives"></div>
+        <div id="legend">Tap, click or press space when displayed letter is in angle of 0°. Be careful, some letters have questionable form!</div>
+    </div>
+</body>
+
+<script>
+    const getLetter = () => {
+        const letters = ['r', 't', 'a', 'n', 's', 'm', 'f']
+        return letters[Math.floor(Math.random()*letters.length)]
+    }
+
+    const scoreDiv = document.getElementById("score")
+    const style = document.getElementById("style")
+    const message = document.getElementById("message")
+    const livesDiv = document.getElementById("lives")
+    const game = document.getElementById("game")
+
+    let speed = 4000
+    let score = 0
+    let lives = 3
+    let gained = 0
+    let scored = false
+    let over = false
+
+    scoreDiv.innerHTML = score
+    livesDiv.innerHTML = lives     
+    game.dataset['content'] = getLetter()
+
+    const getCurrentTime = () => {
+        currentTime = game.getAnimations()[0]["currentTime"]%speed
+        return currentTime
+    }
+
+    const callback = (event) => {
+        position = getCurrentTime()
+        if (over) {
+            document.body.removeAttribute('style')
+            game.style.animationPlayState = "running"
+            score = 0
+            lives = 3
+            scoreDiv.innerHTML = score
+            livesDiv.innerHTML = lives
+            speed = 4000
+            game.style.animationDuration = speed/1000+"s"
+            game.dataset['content'] = getLetter()
+            over = false
+            return
+        }
+        match = (position > speed-speed*.05 ) | (position < speed*.05)
+        if (match){
+            gained = 1
+            color = "white"
+            duration = speed * 0.9
+        }
+        else {
+            gained = -1
+            color = "red"
+            duration = speed * 1.15
+            lives -= 1
+            livesDiv.innerHTML = lives
+        }
+        game.style.animationDuration = duration/1000+"s"
+        ratio = duration/speed
+        game.getAnimations()[0].currentTime *= ratio
+        
+        speed = duration
+        score += gained
+        mark = ""
+        if (gained > 0) {
+            mark = "+"
+        }
+        if (lives == 0) {
+            message.innerHTML = "Busted"
+            message.style.color = "#000"
+            game.style.animationPlayState = "paused"
+            document.body.style.background = "red"
+            over = true
+        }
+        else {
+            message.innerHTML = mark+gained
+            message.style.color = color
+        }
+        scoreDiv.innerHTML = score
+        message.classList.remove("message-show")
+        void message.offsetWidth
+        message.classList.add("message-show")
+    }
+    game.onclick = callback
+    window.onkeydown = callback
+</script>
+
+</html>
