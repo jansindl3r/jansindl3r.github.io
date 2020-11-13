@@ -1,0 +1,73 @@
+#nav-typefaces > * {
+  background: var(--nd-color);
+  padding: 0.1em 0.3em;
+  margin: -0.1em -0.3em;
+}
+#nav-typefaces > *:last-child {
+  text-align: right;
+  float: right;
+}
+
+article p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+article h1 {
+  margin: 0.2rem 0;
+}
+
+.canvas > div > div > img {
+  height: 100%;
+  user-select: none;
+}
+
+article > *:first-child {
+  border-top: #000 2px solid;
+  padding-top: 3rem;
+}
+
+.canvas {
+  display: block;
+  position: relative;
+}
+.canvas > div {
+  white-space: nowrap;
+  height: 55px;
+  line-height: 40px;
+  position: relative;
+}
+.canvas > div > div {
+  height: 100%;
+  font-size: 55px;
+  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+  box-sizing: content-box;
+  z-index: 0;
+}
+.canvas > div > div[data-style]:hover {
+  position: relative;
+  background: var(--nd-color);
+  padding: 0.5rem 1rem 0.2rem 1rem;
+  margin: -0.5rem -1rem -0.2rem -1rem;
+  z-index: 10;
+}
+.canvas > div > div[data-style]:hover::after {
+  font-size: 1rem;
+  line-height: 1rem;
+  position: absolute;
+  content: attr(data-style);
+  left: 0.5em;
+  top: 0.8em;
+  height: 100%;
+  white-space: normal;
+}
+.canvas > div > div[data-style]:hover img {
+  height: 100%;
+  filter: invert(1);
+}
+.canvas img {
+  height: 100%;
+}
+
+/*# sourceMappingURL=detail.css.map */

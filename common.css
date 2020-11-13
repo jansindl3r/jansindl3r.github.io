@@ -1,0 +1,200 @@
+:root {
+  --nd-color: #00ff00;
+}
+
+body, html {
+  font-family: Helvetica;
+  font-size: 18px;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
+body, body *, html, html * {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+article > * {
+  max-width: 70ch;
+}
+
+* {
+  position: relative;
+  outline: none;
+  box-sizing: border-box;
+}
+
+code {
+  background: #bbb;
+  padding: 0.1em;
+  margin: -0.1em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  display: block;
+  position: relative;
+  width: 100%;
+  z-index: 101;
+}
+header #logo {
+  padding: 0.5em 0 0.5em 0;
+  font-size: 1.5rem;
+  background: var(--nd-color);
+  display: block;
+  width: 100%;
+  color: transparent;
+  overflow: hidden;
+}
+header #logo *[data-content]::after, header #logo *[data-content]::before {
+  color: black;
+  animation: fall 5s cubic-bezier(0.14, -0.22, 0.55, -0.07) infinite;
+  animation-delay: 0.5s;
+  content: attr(data-content);
+  position: absolute;
+  left: 0;
+}
+header #logo *[data-content]::before {
+  top: -50px;
+}
+
+nav, #nav {
+  font-size: 1.5rem;
+}
+nav > *, #nav > * {
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#nav {
+  padding-top: 0.5rem;
+}
+
+nav {
+  width: 100%;
+  z-index: 100;
+  background: #fff;
+  top: 0;
+  padding-top: 0.5rem;
+  margin-top: -0.5rem;
+  position: sticky !important;
+  border-bottom: var(--nd-color) 3px solid;
+  padding-bottom: 0.5rem;
+}
+nav a {
+  padding: 0.1rem 0.3rem;
+  margin: -0.1rem -0.3rem;
+  background: var(--nd-color);
+  z-index: 0;
+}
+nav > * > * {
+  display: inline-block;
+}
+
+main > *, article, nav > *, #nav, #logo > * {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.top {
+  margin-top: 2rem;
+}
+
+.btm {
+  margin-bottom: 2rem;
+}
+
+.strong, strong {
+  font-weight: 900;
+}
+
+.hvr {
+  cursor: pointer;
+}
+
+.ndclr {
+  color: var(--nd-color);
+}
+
+@media screen and (min-width: 1080px) {
+  header #logo > * {
+    display: block;
+  }
+
+  .entry.font {
+    height: 100px;
+  }
+
+  main > *, article, nav > *, #nav, #logo > * {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    max-width: 1500px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  .entry.font {
+    height: 80px !important;
+    padding: 1rem 0rem;
+  }
+  .entry.font .font-title {
+    font-size: 60px;
+  }
+
+  main > *, article, nav > *, #nav, #logo > * {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  nav, #nav, #logo {
+    text-align: center;
+    display: block;
+  }
+
+  .entry > * {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  .entry.font {
+    height: 55px;
+  }
+}
+@media (hover: hover) {
+  #nav a:hover {
+    background: var(--nd-color);
+  }
+
+  nav a:hover {
+    background: black;
+    color: white;
+  }
+
+  .entry.font:hover {
+    background: var(--nd-color);
+    padding-left: 2rem;
+  }
+  .entry.font:hover .date, .entry.font:hover .info {
+    color: #fff;
+  }
+  .entry.stuff:hover .date {
+    color: white;
+  }
+  .entry.stuff:hover > *:first-child {
+    background: var(--nd-color);
+  }
+}
+
+/*# sourceMappingURL=common.css.map */
