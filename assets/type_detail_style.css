@@ -1,0 +1,49 @@
+
+.canvas div {
+    height: 90px;
+    position: relative;
+}
+
+.canvas > div > div > img {
+    height: 100%;
+    user-select: none;
+}
+
+.canvas {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.canvas > div {
+    white-space: nowrap;
+}
+
+.canvas > div > div {
+    display: inline-block;
+    position: relative;
+}
+
+.canvas > div > div[data-style]:hover{
+    position: relative;
+    background: var(--nd-color);
+    height: 100%;
+    padding: .5rem 1rem .2rem 1rem;
+    margin: -.5rem -1rem -.2rem -1rem;
+}
+.canvas > div > div:hover img {
+    filter: invert(1);
+}
+
+.canvas > div > div:hover {
+    z-index: 100;
+}
+
+.canvas > div > div:hover::after {
+    position: absolute;
+    content: attr(data-style);
+    left: .5rem;
+    top: .5rem;
+    font-size: 1.5rem;
+    white-space: normal;
+}

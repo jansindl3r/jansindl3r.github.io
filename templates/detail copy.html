@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+{% block content %}
+    <main>
+        <div class="style wb">
+            <h1 style="display: inline;">Gabion</h1> 
+            {% if data.buy %}
+                <div onclick="location.href='#'" class="star hvr"><div></div><div>try<br>—<br>buy</div></div>
+            {% endif %}
+        </div>
+        {% for entry in data.styles %}
+            <div class="style wb">
+                <h2>{{ entry }}</h2>
+                <span>{{ data.styles[entry].keys()|join(' – ') }}</span>
+            </div>
+            {% for sub_entry in data.styles[entry] %}
+                <div class="entry">
+                    <div class="preview"><img src="{{root}}/entries/type/{{folder}}/{{data.styles[entry][sub_entry]}}"></div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+        
+    </main>
+    <article>
+        {{ content }}
+    </article>
+    <!-- <svg>
+        <symbol width="100%" viewBox="0 0 60 55" style="padding-bottom: 100%; height: 1px; overflow: visible" preserveAspectRatio="xMidYMin slice" id="star">
+            <path d="M35.312,46.2L39.139,52.49L45.082,48.143L46.211,55.419L53.365,53.678L51.624,60.832L58.9,61.961L54.553,67.904L60.843,71.731L54.553,75.558L58.9,81.502L51.624,82.63L53.365,89.785L46.211,88.043L45.082,95.319L39.139,90.972L35.312,97.263L31.485,90.972L25.541,95.319L24.413,88.043L17.258,89.785L19,82.63L11.724,81.502L16.071,75.558L9.78,71.731L16.071,67.904L11.724,61.961L19,60.832L17.258,53.678L24.413,55.419L25.541,48.143L31.485,52.49L35.312,46.2Z"/>
+        </symbol>
+    </svg> -->
+{% endblock %}

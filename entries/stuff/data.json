@@ -1,0 +1,6 @@
+{
+    "extensions": ["Extensions", "for RoboFont and a tool for command line", false],
+    "workshop_scholastika": ["Workshop at Scholastika", "lecture and workshop on variable fonts and type", "9-11-2020"],
+    "this_website": ["This website", "uses Python to generate static website", "12-11-2020"],
+    "Bachelor_VTT": ["TT Hinting in VTT", "as output and learning path of my final bachelor project", "27-06-2018"]
+}

@@ -1,0 +1,1 @@
+Sometimes I do enjoy production of digital tool for something else than type. Designing my website presenting my typefaces and programming tools behind it was a perfect overlap of my long term focus and interest.

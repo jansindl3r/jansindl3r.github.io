@@ -1,0 +1,51 @@
+{% extends 'main.html' %}
+{% block css %}
+<link rel="stylesheet" href="{{root}}/detail.css">
+    {% for css_link in font_info.css %}
+        <link rel="stylesheet" href="{{root}}/{{css_link}}">
+    {% endfor %}
+{% endblock %}
+{% block content %}
+    <main>
+        <h1 class="top">{{font_info["fontName"]}}
+            {% if font_info["buy"] or font_info["try"] %}
+            <a href="{{font_info.link}}" target="_blank" class="ndclr">
+                <small>
+                    {% if font_info.try and font_info.buy %}
+                        try & buy
+                    {% elif font_info.try%}
+                        try
+                    {% else %}
+                        buy
+                    {% endif %}
+                </small>
+            </a>
+        {% endif %}
+        </h1>
+        <div id="nav-typefaces">
+            <a href="../{{previous_typeface}}">previous – {{previous_typeface}}</a>
+            <a href="../{{next_typeface}}">next – {{next_typeface}}</a>
+        </div>
+        {% for style in font_info.styles %}
+            <h2 class="top">
+                {{ style }}
+            </h2>
+            <div class="canvas-wrapper">
+                <div class="canvas" data-style="{{ style }}"></div>
+            </div>
+        {% endfor %}
+    </main>
+    <article class="top">
+        {{text}}
+    </article>
+    {% if images_data %}
+        <script type=text/javascript>
+            var images_data = {{images_data}}
+        </script>
+        <script src="{{root}}/assets/detail_script.js"></script>
+    {% endif %}
+    {% if font_info.javascript %}
+        <script src="{{root}}/{{font_info.javascript}}"></script>
+    {% endif %}
+    
+{% endblock %}

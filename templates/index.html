@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+{% block css %}
+<link rel="stylesheet" href="{{root}}/main.css">
+{% endblock %}
+{% block content %}
+<script src="assets/script.js"></script>
+<main id="index btm">
+    <div id="type">
+        <div class="top btm strong ndclr">type</div>
+        {% for entry in type_entries %}
+        <a href="type/{{type_entries[entry][0]}}" class="entry hvr font brdr" data-font="{{type_entries[entry][1]}}">
+            {% if type_entries[entry][1] %}
+                <img height="80px" src="../../assets/{{type_entries[entry][1]}}">
+            {% else %}
+                <span class="font-title" data-font-name="{{type_entries[entry][0]}}">{{type_entries[entry][0]}}</span>
+            {% endif %}
+            <span>
+                <span class="info">{{type_entries[entry][2]}}</span>
+            </span>
+        </a>
+        {% endfor %}
+    </div>
+    <div id="stuff">
+        <div class="top btm strong ndclr">stuff</div>
+        {% for entry in stuff_entries %}
+        <div class="entry stuff brdr">
+            <div onclick="roll(this)" class="hvr">
+                {% if stuff_entries[entry][2] %}
+                    <span class="date ndclr">{{stuff_entries[entry][2]}}</span>
+                {% endif %}
+                <div><strong>{{stuff_entries[entry][0]}}</strong>
+                </div>
+                <em><small>{{stuff_entries[entry][1]}}</small></em>
+            </div>
+            <div class="hidden">{{stuff_entries[entry][3]}}</div>
+        </div>
+        {% endfor %}
+    </div>
+    <div id="cv" class="btm">
+        <div class="top btm strong ndclr">CV</div>
+        <div class="entry"><div><div><span class="date ndclr">2019 – 2020</span><strong>Type and Media, KABK, The Hague</strong></div><small><em>A great year of studying type and programming. My final project was typeface called Gabion, it is output of a path of searching and discovering possibilities of type family planning.</em></small></div></div>
+        <div class="entry"><div><div><span class="date ndclr">2019, 2 months</span><strong>Internship at LucasFonts</strong></div><small><em>I was involved in designing pictograms for a german company, production of variable fonts and producing multiple websites that served as icon finder, font presentation & font tester.</em></small></div></div>
+        <div class="entry"><div><div><span class="date ndclr">2018, 3 months</span><strong>Internship at LucasFonts</strong></div><small><em>Helping with production of a typeface for a car brand and redesigning typeface for a german newspaper.</em></small></div></div>
+        <div class="entry"><div><div><span class="date ndclr">2017, 6 months</span><strong>Erasmus at KADK, Copenhagen</strong></div><small><em>During this exchange I learnt a lot about foreign culture, people and beautiful language - Danish.</em></small></div></div>
+        <div class="entry"><div><div><span class="date ndclr">2015 – 2019</span><strong>Type at UMPRUM, Prague</strong></div><small><em>4 years of studying type, typography and graphic design</em></small></div></div>
+    </div>
+</main>
+
+{% endblock %}

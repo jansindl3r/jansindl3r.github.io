@@ -1,0 +1,94 @@
+.entry span[data-font-name] {
+    position: relative;
+    font-family: "rotor";
+    animation: rotate 2s infinite;
+    &::before {
+        content: attr(data-font-name);
+        font-family: "rotor overlay";
+        color: var(--nd-color);
+        position: absolute;
+    }
+} 
+
+.entry {
+    & {
+        display: block;
+        overflow: hidden;
+        max-width: 100%;
+        border: #000 2px;
+    }
+    &.brdr {
+        border-bottom-style: solid;
+    }
+    > * {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    & > *:first-child {
+        padding: .5rem 0;
+    }
+    &.rolled > *:first-child {
+        background: var(--nd-color);
+    }
+    &.font {
+        box-sizing: content-box;
+        height: 90px;
+        > .font-title {
+            font-size: 110px;
+            display: block;
+            margin-top: -40px
+        }
+        > span:last-child {
+            text-align: right;
+            color: var(--nd-color);
+            position: absolute;
+            right: 0;
+            top: .5em;
+            > span {
+                display: block;
+            }
+        }
+    }
+    &.font {
+        transition: padding-left .2s ease-in-out, background .05s ease-in;
+    }
+    &.stuff {
+        > *:first-child {
+            transition: background .05s ease-in;
+        }
+    }
+    img {
+        height: 100%;
+    }
+    .date {
+        float: right;
+    }
+    .hidden {
+        margin: 0 0;
+        height: 0;
+        transition: height .15s ease-in, padding .15s ease-in;
+        box-sizing: content-box;
+        max-width: 70ch;
+        &[style] {
+            padding: 1em 0 3.5em 1em;
+            a {
+                text-decoration: underline;
+            }
+        }
+        p {
+            margin: 0 0 .5em 0;
+            line-height: 120%;
+            letter-spacing: 110%;
+        }
+        h1, h2, h3, h4 {
+            margin: 0;
+            color: var(--nd-color);
+        }
+    }
+}
+
+#type, #stuff, #cv {
+    & > *:nth-child(2) {
+        border-top-style: solid;
+    }
+}
