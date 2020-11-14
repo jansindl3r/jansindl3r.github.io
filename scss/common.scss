@@ -99,7 +99,7 @@ nav {
     }
 }
 
-main > *, article, nav > *, #nav, #logo > * {
+main > *, article, nav > *, #nav, #logo > *, #gallery {
     padding-left: 1rem;
     padding-right: 1rem;
 }
@@ -145,7 +145,7 @@ $small: 500px;
     .entry.font {
         height: 100px;
     }
-    main > *, article, nav > *, #nav, #logo > *{
+    main > *, article, nav > *, #nav, #logo > *, #gallery, hr{
         padding-left: 3rem;
         padding-right: 3rem;
         max-width: 1500px;

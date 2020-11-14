@@ -77,7 +77,20 @@ for _, (sub_folder, *_) in type_entries.items():
     if sub_folder not in sub_folders:
         sub_folders.append(sub_folder)
 
-        
+def get_slideshow(sub_folder):
+    entries = []
+    files = list((base/'type'/sub_folder/'slideshow').iterdir())
+    files = filter(lambda x:False if x.stem.startswith('.') else True, files)
+    files = sorted(files, key=lambda x:int(x.stem))
+    for entry in files:
+        if entry.suffix == ".html":
+            with open(entry, "r") as input_file:
+                entries.append(['embed', input_file.read()])
+        else:
+            entries.append(['link', entry.name])
+    return entries
+
+
 for i, sub_folder in enumerate(sub_folders):
     picture_data_path = base/"type"/sub_folder/"images_data.json"
     images_data = False
@@ -93,5 +106,6 @@ for i, sub_folder in enumerate(sub_folders):
             text = get_md(base/"entries"/"type"/sub_folder/f"{sub_folder}.md"),
             folder = sub_folder,
             images_data = images_data,
+            slideshow = get_slideshow(sub_folder)
         )
     render_template('detail.html', context, outdir=base/"type"/sub_folder)

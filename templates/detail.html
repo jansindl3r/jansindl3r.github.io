@@ -6,7 +6,7 @@
     {% endfor %}
 {% endblock %}
 {% block content %}
-    <main>
+    <main class="btm">
         <h1 class="top">{{font_info["fontName"]}}
             {% if font_info["buy"] or font_info["try"] %}
             <a href="{{font_info.link}}" target="_blank" class="ndclr">
@@ -37,6 +37,29 @@
             </div>
         {% endfor %}
     </main>
+    <hr>
+    <div id="gallery" class="top btm">
+        <div class="pics">
+        {% for (type, entry) in slideshow %}
+                {% if type == 'embed' %}
+                    <div>{{entry}}</div>
+                {% else %}
+                    <img src="slideshow/{{entry}}">
+                {% endif %}
+        {% endfor %}
+        <!-- 
+            <img height="100%" width="auto" src="slideshow/1.svg">
+            <img height="100%" width="auto" src="slideshow/2.svg">
+            <img height="100%" width="auto" src="slideshow/3.svg">
+            <img height="100%" width="auto" src="slideshow/4.svg">
+        -->
+        </div>
+        <div class="nav">
+            <div onmouseover="move()" onmouseleave="out = true"></div>
+            <div onmouseover="move()" onmouseleave="out = true"></div>
+        </div>
+    </div>
+    <hr>
     <article class="top">
         {{text}}
     </article>

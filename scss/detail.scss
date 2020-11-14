@@ -1,11 +1,11 @@
 #nav-typefaces {
     > * {
         background: var(--nd-color);
-        padding: .1em .3em;
-        margin: -.1em -.3em;
-    &:last-child {
-        text-align: right;
-        float: right;
+        padding: 0.1em 0.3em;
+        margin: -0.1em -0.3em;
+        &:last-child {
+            text-align: right;
+            float: right;
         }
     }
 }
@@ -25,10 +25,89 @@ article {
     user-select: none;
 }
 
+hr {
+    background-color: var(--nd-color);
+    height: 2px;
+    border: 0;
+}
+
 article {
-    > *:first-child {
-        border-top: #000 2px solid;
-        padding-top: 3rem;
+    img {
+        margin-top: 1.5em;
+        width: 100%;
+        background: var(--nd-color);
+        mix-blend-mode: multiply;
+        & + em {
+            margin-bottom: 1.5em;
+            font-size: 0.8em;
+        }
+    }
+    a {
+        text-decoration: underline;
+        color: var(--nd-color);
+    }
+}
+
+#gallery {
+    height: 50vh;
+    white-space: nowrap;
+    @media(hover:hover) {
+        .nav {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: inline-block;
+            top: 0;
+            left: 0;
+            font-size: 0;
+                > * {
+                    position: relative;
+                    display: inline-block;
+                    width: calc(50%);
+                    height: 100%;
+                    cursor: url("arrow_left.svg") 0 50, w-resize;
+                    &:last-child {
+                        cursor: url("arrow_right.svg") 128 50, e-resize;
+                    }
+                }
+            }
+    }
+    // @media(hover:none) {
+    //     &::after {
+    //         box-sizing: content-box;
+    //         content: "dawda";
+    //         background: red;
+    //         position: absolute;
+    //         left: 0;
+    //         top: 0;
+    //         height: 100%;
+    //         width: 100%;
+    //         opacity: 0.5;
+
+    //     }
+    // }
+    .pics {
+        border: #000 2px;
+        border-top-style: solid;
+        border-bottom-style: solid;
+        height: 100%;
+        display: block;
+        overflow: scroll;
+        font-size: 0;
+        > * {
+            margin-left: -1px;
+            color: #fff;
+            display: inline;
+            position: relative;
+            height: 100%;
+            vertical-align: top;
+        }
+        @media(hover: hover) {
+            overflow: hidden;
+        }
+        @media(hover: none) {
+            overflow: scroll;
+        }
     }
 }
 
@@ -47,7 +126,7 @@ article {
         height: 55px;
         line-height: 40px;
         position: relative;
-        }    
+    }
     > div > div {
         height: 100%;
         font-size: 55px;
@@ -59,16 +138,16 @@ article {
         &[data-style]:hover {
             position: relative;
             background: var(--nd-color);
-            padding: .5rem 1rem .2rem 1rem;
-            margin: -.5rem -1rem -.2rem -1rem;
+            padding: 0.5rem 1rem 0.2rem;
+            margin: -0.5rem -1rem -0.2rem;
             z-index: 10;
             &::after {
                 font-size: 1rem;
                 line-height: 1rem;
                 position: absolute;
                 content: attr(data-style);
-                left: .5em;
-                top: .8em;
+                left: 0.5em;
+                top: 0.8em;
                 height: 100%;
                 white-space: normal;
             }
@@ -82,4 +161,3 @@ article {
         height: 100%;
     }
 }
-

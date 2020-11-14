@@ -28,7 +28,7 @@ for (let c = 0; c < canvases.length; c++) {
         picture.appendChild(img)
         
         spaceWidth = (images_data[style][key][3]/ratio)/2
-        console.log(images_data[style][key])
+        // console.log(images_data[style][key])
         // spaceWidth = 0
         
         if (lastSpace > 0) {
@@ -49,4 +49,30 @@ for (let c = 0; c < canvases.length; c++) {
         } 
 
     }
+}
+
+galleryPics = document.querySelector("#gallery .pics")
+var out = true
+var x = null
+var w = document.body.clientWidth || window.innerWidth 
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+async function move() {
+    out = false
+    while (!out) {
+        await sleep(10)
+        shift = -(Math.floor((w/2 - x)/25))
+        galleryPics.scroll(galleryPics.scrollLeft+shift, 0)
+    }
+}
+
+window.onmousemove = (event) => {
+    x = event.clientX
+}
+
+window.onresize = () => {
+    w = document.body.clientWidth || window.innerWidth 
 }

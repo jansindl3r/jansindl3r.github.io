@@ -97,7 +97,7 @@ nav > * > * {
   display: inline-block;
 }
 
-main > *, article, nav > *, #nav, #logo > * {
+main > *, article, nav > *, #nav, #logo > *, #gallery {
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -138,7 +138,7 @@ main .canvas-wrapper > div {
     height: 100px;
   }
 
-  main > *, article, nav > *, #nav, #logo > * {
+  main > *, article, nav > *, #nav, #logo > *, #gallery, hr {
     padding-left: 3rem;
     padding-right: 3rem;
     max-width: 1500px;
