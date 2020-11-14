@@ -26,6 +26,14 @@ article > *:first-child {
   padding-top: 3rem;
 }
 
+.canvas-wrapper {
+  box-sizing: border-box;
+  display: block;
+}
+.canvas-wrapper > div {
+  overflow: hidden;
+}
+
 .canvas {
   display: block;
   position: relative;

@@ -13,10 +13,6 @@ body, body *, html, html * {
   margin: 0;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 article > * {
   max-width: 70ch;
 }
@@ -86,7 +82,8 @@ nav {
   top: 0;
   padding-top: 0.5rem;
   margin-top: -0.5rem;
-  position: sticky !important;
+  position: sticky;
+  overflow: visible;
   border-bottom: var(--nd-color) 3px solid;
   padding-bottom: 0.5rem;
 }
@@ -103,6 +100,13 @@ nav > * > * {
 main > *, article, nav > *, #nav, #logo > * {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+main .canvas-wrapper {
+  padding-left: 0;
+}
+main .canvas-wrapper > div {
+  padding-left: 1rem;
 }
 
 .top {
@@ -141,6 +145,14 @@ main > *, article, nav > *, #nav, #logo > * {
     margin-right: auto;
     margin-left: auto;
   }
+
+  main .canvas-wrapper {
+    padding-left: 0;
+  }
+  main .canvas-wrapper > div {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
 @media screen and (max-width: 500px) {
   .entry.font {
@@ -157,6 +169,14 @@ main > *, article, nav > *, #nav, #logo > * {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  main .canvas-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  main .canvas-wrapper > div {
+    padding-left: 0.5rem;
   }
 
   nav, #nav, #logo {

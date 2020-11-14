@@ -32,6 +32,13 @@ article {
     }
 }
 
+.canvas-wrapper {
+    box-sizing: border-box;
+    display: block;
+    > div {
+        overflow: hidden;
+    }
+}
 .canvas {
     display: block;
     position: relative;
