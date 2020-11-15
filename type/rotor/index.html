@@ -10,11 +10,13 @@
   <meta content="#00ff00" name="theme-color"/>
   <link href="../../css/common.css" rel="stylesheet"/>
   <link href="../../css/supply.css" rel="stylesheet"/>
-  <link href="../../css/detail.css" rel="stylesheet"/>
-  <link href="../../entries/type/rotor/rotor.css" rel="stylesheet"/>
-  <title>
-   Jan Šindler
-  </title>
+  <link href="/assets/favicon.ico" rel="shortcut icon" type="image/x-icon">
+   <link href="../../css/detail.css" rel="stylesheet"/>
+   <link href="../../entries/type/rotor/rotor.css" rel="stylesheet"/>
+   <title>
+    Jan Šindler
+   </title>
+  </link>
  </head>
  <body>
   <header>
@@ -113,8 +115,8 @@ padding: 0 .2em;
        </div>
       </div>
      </div>
-     <img height="50vh" src="slideshow/1.svg"/>
-     <img height="50vh" src="slideshow/3.svg"/>
+     <img alt="An image inside slideshow number 2" height="50vh" src="slideshow/1.svg" width="auto"/>
+     <img alt="An image inside slideshow number 3" height="50vh" src="slideshow/3.svg" width="auto"/>
     </div>
     <div id="nav">
      <div onmouseleave="out = true" onmouseover="move()">
@@ -124,10 +126,10 @@ padding: 0 .2em;
     </div>
    </div>
    <hr/>
-   <h2 class="top">
-    Black
-   </h2>
    <div class="canvas-wrapper">
+    <h2 class="top ndclr">
+     Black
+    </h2>
     <div>
      <div class="canvas" data-style="Black">
      </div>
@@ -135,7 +137,7 @@ padding: 0 .2em;
    </div>
    <hr class="top"/>
    <article class="top">
-    <h1>
+    <h1 class="ndclr">
      Process
     </h1>
     <p>
@@ -143,7 +145,7 @@ padding: 0 .2em;
     </p>
     <p>
      As its name the font can be read from both sides as well. It was designed with thought on interaction with user, decoding and encoding messages. Rotor is also a story of desperate search for font editor, production technology and finally, thanks to studies at
-     <a href="https://typemedia.org/" target="_blank">
+     <a href="https://typemedia.org/" noopener'="" target="_blank rel=">
       Type and Media
      </a>
      ,
@@ -157,9 +159,9 @@ padding: 0 .2em;
     </p>
    </article>
   </main>
-  <script src="../../scripts/detail_script_fill_divs.js">
-  </script>
   <script src="../../scripts/detail_script.js">
+  </script>
+  <script src="../../scripts/detail_script_fill_divs.js">
   </script>
   <div class="btm">
   </div>

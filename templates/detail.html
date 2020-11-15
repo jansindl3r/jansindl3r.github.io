@@ -34,7 +34,7 @@
                 {% if type == 'embed' %}
                     <div>{{entry}}</div>
                 {% else %}
-                    <img height="50vh" src="slideshow/{{entry}}">
+                    <img alt="An image inside slideshow number {{loop.index}}" height="50vh" width="auto" src="slideshow/{{entry}}">
                 {% endif %}
         {% endfor %}
         </div>
@@ -44,22 +44,23 @@
         </div>
     </div>
     <hr>
-    {% for style in font_info.styles %}
-        <h2 class="top">
-            {{ style }}
-        </h2>
-        <div class="canvas-wrapper">
+    <div class="canvas-wrapper">
+        {% for style in font_info.styles %}
+            <h2 class="top ndclr">
+                {{ style }}
+            </h2>
             <div>
                 <div class="canvas" data-style="{{ style }}"></div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
     <hr class="top">
     <article class="top">
-        <h1>Process</h1>
+        <h1 class="ndclr">Process</h1>
         {{text}}
     </article>
     </main>
+    <script src="{{root}}/scripts/detail_script.js"></script>
     {% if images_data %}
         <script type=text/javascript>
             var images_data = {{images_data}}
@@ -69,5 +70,4 @@
         {% if font_info.javascript %}
         <script src="{{root}}/{{font_info.javascript}}"></script>
         {% endif %}
-    <script src="{{root}}/scripts/detail_script.js"></script>
 {% endblock %}

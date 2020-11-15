@@ -2,6 +2,7 @@ galleryPics = document.querySelector("#gallery #pics")
 var out = true
 var x = null
 var w = document.body.clientWidth || window.innerWidth 
+var h = window.innerHeight 
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -23,6 +24,7 @@ window.onmousemove = (event) => {
 
 window.onresize = () => {
     w = document.body.clientWidth || window.innerWidth 
+    h = window.innerHeight 
 }
 
 

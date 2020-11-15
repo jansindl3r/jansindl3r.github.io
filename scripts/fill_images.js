@@ -1,10 +1,17 @@
 canvases = document.getElementsByClassName('canvas')
 
-var w = window.innerWidth
+var ratio = 1000/50
+var stopper 
 
-ratio = 1000/50
+if (h > w) {
+    stopper = 5
+}
+else {
+    stopper = 3
+}
 
 for (let c = 0; c < canvases.length; c++) {
+    let lineCounter = 1
     let lastSpace = 0;
     let line = document.createElement('div')
     var lineWidth = 0
@@ -28,8 +35,6 @@ for (let c = 0; c < canvases.length; c++) {
         picture.appendChild(img)
         
         spaceWidth = (images_data[style][key][3]/ratio)/2
-        // console.log(images_data[style][key])
-        // spaceWidth = 0
         
         if (lastSpace > 0) {
             lastSpace += spaceWidth
@@ -42,10 +47,14 @@ for (let c = 0; c < canvases.length; c++) {
         lastSpace = spaceWidth
 
         if (line.lastChild && lineWidth/ratio > w) {
+            if (lineCounter == stopper) {
+                break
+            }
             line = document.createElement('div')
             canvases[c].appendChild(line)
             lastSpace = 0
             lineWidth = 0
+            lineCounter += 1
         } 
 
     }

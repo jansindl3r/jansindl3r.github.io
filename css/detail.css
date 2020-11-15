@@ -75,7 +75,7 @@ article a {
     cursor: url(arrow_left.svg) 0 50, w-resize;
   }
   #gallery #nav > *:last-child {
-    cursor: url(arrow_right.svg) 128 50, e-resize;
+    cursor: url(arrow_right.svg) 127 50, e-resize;
   }
 }
 @media (hover: none) {
@@ -126,8 +126,6 @@ article a {
 .canvas-wrapper {
   box-sizing: content-box;
   display: block;
-}
-.canvas-wrapper > div {
   overflow: hidden;
 }
 

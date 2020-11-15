@@ -38,7 +38,7 @@ header {
     display: block;
     position: relative;
     width: 100%;
-    z-index: 101;
+    z-index: 102;
     #logo {
         padding: .5em 0 .5em 0;
         font-size: 1.5rem;
@@ -136,6 +136,8 @@ main > *, header > * > *, nav > * {
 
 main .canvas-wrapper {
     padding-left: 0;
+    box-sizing: border-box;
+    width: calc( 100% - 1rem );
     > * {
         padding-left: 1rem;
     }
@@ -162,6 +164,7 @@ $small: 500px;
         padding-right: 3rem;
     }
     main .canvas-wrapper {
+        width: calc( 100% - 3rem );
         padding-left: 0;
         > * {
             padding-left: 3rem;
@@ -178,6 +181,10 @@ $small: 500px;
         .font-title {
             font-size: 60px;
         }
+        img, .font-title {
+            padding-left: 0.2rem !important;
+            padding-right: 0.2rem !important;
+        }
     }
 
     nav, #nav, #logo {
@@ -187,12 +194,24 @@ $small: 500px;
 
     .entry {
         > * {
-            padding-left: .5rem !important;
-            padding-right: .5rem !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
         }
         &.font {
             height: 55px;   
         }
+    }
+
+    main .canvas-wrapper {
+        width: calc( 100% - .5rem );
+        padding-left: 0;
+        > * {
+            padding-left: .5rem;
+        }
+    }
+
+    main > *{
+        padding: 0 .4rem;
     }
 }
 

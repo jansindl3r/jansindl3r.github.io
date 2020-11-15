@@ -29,7 +29,7 @@ def get_style_name(font):
         try:
             style_name = ttfont.getName(17, 3, 1).toStr()
         except:
-            style_name = "not found!"
+            style_name = " "
     return style_name
 
 for i, word in enumerate(args.words):

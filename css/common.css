@@ -38,7 +38,7 @@ header {
   display: block;
   position: relative;
   width: 100%;
-  z-index: 101;
+  z-index: 102;
 }
 header #logo {
   padding: 0.5em 0 0.5em 0;
@@ -132,6 +132,8 @@ main > *, header > * > *, nav > * {
 
 main .canvas-wrapper {
   padding-left: 0;
+  box-sizing: border-box;
+  width: calc( 100% - 1rem );
 }
 main .canvas-wrapper > * {
   padding-left: 1rem;
@@ -152,6 +154,7 @@ main .canvas-wrapper > * {
   }
 
   main .canvas-wrapper {
+    width: calc( 100% - 3rem );
     padding-left: 0;
   }
   main .canvas-wrapper > * {
@@ -166,6 +169,10 @@ main .canvas-wrapper > * {
   .entry.font .font-title {
     font-size: 60px;
   }
+  .entry.font img, .entry.font .font-title {
+    padding-left: 0.2rem !important;
+    padding-right: 0.2rem !important;
+  }
 
   nav, #nav, #logo {
     text-align: center;
@@ -173,11 +180,23 @@ main .canvas-wrapper > * {
   }
 
   .entry > * {
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
   .entry.font {
     height: 55px;
+  }
+
+  main .canvas-wrapper {
+    width: calc( 100% - .5rem );
+    padding-left: 0;
+  }
+  main .canvas-wrapper > * {
+    padding-left: 0.5rem;
+  }
+
+  main > * {
+    padding: 0 0.4rem;
   }
 }
 @media (hover: hover) {

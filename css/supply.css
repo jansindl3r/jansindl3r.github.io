@@ -1,19 +1,19 @@
 @keyframes rotate {
     0% {
         font-variation-settings: "rttx" 0;                
-        animation-timing-function: cubic-bezier(.5, .0, 1.0, .5);
+        animation-timing-function: cubic-bezier(.5, .1, .9, .5);
     }
     25% {
         font-variation-settings: "rttx" 90;                
-        animation-timing-function: cubic-bezier(.0, .5, .5, 1.0);
+        animation-timing-function: cubic-bezier(.1, .5, .5, .9);
     }
     50% {
         font-variation-settings: "rttx" 180;                
-        animation-timing-function: cubic-bezier(.5, .0, 1.0, .5);
+        animation-timing-function: cubic-bezier(.5, .1, .9, .5);
     }
     75% {
         font-variation-settings: "rttx" 270;                
-        animation-timing-function: cubic-bezier(.0, .5, .5, 1.0);
+        animation-timing-function: cubic-bezier(.1, .5, .5, .9);
     }
     100% {
         font-variation-settings: "rttx" 360;                
