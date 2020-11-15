@@ -30,7 +30,6 @@ article {
         background: var(--nd-color);
         img {
             width: 100%;
-            mix-blend-mode: multiply;
             display: block;
         }
         & + em {
@@ -77,9 +76,9 @@ article {
                     display: inline-block;
                     width: calc(50%);
                     height: 100%;
-                    cursor: url("arrow_left.svg") 0 50, w-resize;
+                    cursor: url(arrow_left.svg) 0 50, w-resize;
                     &:last-child {
-                        cursor: url("arrow_right.svg") 128 50, e-resize;
+                        cursor: url(arrow_right.svg) 128 50, e-resize;
                     }
                 }
             }

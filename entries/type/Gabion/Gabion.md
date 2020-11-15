@@ -1,6 +1,6 @@
 Gabion explores links between headline and text styles. It is a result of very important learning process. Process of unconnectable dots, searching and learning and changing opinion every day and week. In the end I had a typeface that I would had never thought of drawing because it used to be out of my comfort zone. Now I see new fields to explore and have experiences and material to build on.
 
-![](initial-paper-sketch.jpeg)
+![](initial-paper-sketch.png)
 *First sketches were all about exploration of writing tools, combining styles and seeing what could have been done*
 
 ![](e.svg)

@@ -23,6 +23,12 @@ def get_md(path):
     for match in matches[::-1]:
         left, right = match.span()
         html = f"{html[:left]}<div class='pic-wrapper'>{match.group()}</div>{html[right:]}"
+    
+    matches = list(re.finditer(r"<a(\ ).*>", html))
+    for match in matches[::-1]:
+        left, right = match.span(1)
+        html = f"{html[:left]} target='_blank' {match.group(1)}{html[right:]}"
+        
     return html
 
 

@@ -85,6 +85,10 @@
             color: var(--nd-color);
         }
     }
+    small {
+        display: inline-block;
+        max-width: 70ch;
+    }
 }
 
 #type, #stuff, #cv {

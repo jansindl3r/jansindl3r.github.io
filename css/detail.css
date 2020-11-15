@@ -28,7 +28,6 @@ article .pic-wrapper {
 }
 article .pic-wrapper img {
   width: 100%;
-  mix-blend-mode: multiply;
   display: block;
 }
 article .pic-wrapper + em {
@@ -73,10 +72,10 @@ article a {
     display: inline-block;
     width: calc(50%);
     height: 100%;
-    cursor: url("arrow_left.svg") 0 50, w-resize;
+    cursor: url(arrow_left.svg) 0 50, w-resize;
   }
   #gallery #nav > *:last-child {
-    cursor: url("arrow_right.svg") 128 50, e-resize;
+    cursor: url(arrow_right.svg) 128 50, e-resize;
   }
 }
 @media (hover: none) {

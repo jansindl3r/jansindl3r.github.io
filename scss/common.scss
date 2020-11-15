@@ -50,6 +50,9 @@ header {
         *[data-content] {
             &::after, &::before {
                 color: black;
+                background: var(--nd-color);
+                padding: 2px; // hack for safari, otherwise fragments
+                margin: -2px; // 
                 animation: fall 5s cubic-bezier(.14,-.22,.55,-.07) infinite;
                 animation-delay: .5s;
                 content: attr(data-content);
@@ -72,6 +75,7 @@ nav, #nav {
         margin-right: auto;
     }
 }
+
 
 #nav {
     padding-top: .5rem;

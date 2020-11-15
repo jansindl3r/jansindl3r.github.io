@@ -88,30 +88,33 @@
     <div id="pics">
      <div>
       <div style="font-size: 50vh; 
-animation: rotate 5s infinite;
+animation-name: rotate;
+animation-duration: 4s;
+animation-iteration-count: infinite;
 font-family: rotor; 
 color: #000;
 background: var(--nd-color);
-margin-top: -10vh;
+margin-top: -9.6vh;
 display: inline-block;
 overflow: hidden;
+padding: 0 .2em;
 ">
        <div>
-        rotor
+        raf
        </div>
        <div style="
+    padding: inherit;
     font-family: 'rotor overlay';
     position: absolute; 
     left: 0;
     top: 0;
     color: #fff;">
-        rotor
+        raf
        </div>
       </div>
      </div>
-     <img height="50vh" src="slideshow/2.svg"/>
+     <img height="50vh" src="slideshow/1.svg"/>
      <img height="50vh" src="slideshow/3.svg"/>
-     <img height="50vh" src="slideshow/5.svg"/>
     </div>
     <div id="nav">
      <div onmouseleave="out = true" onmouseover="move()">
@@ -136,16 +139,21 @@ overflow: hidden;
      Process
     </h1>
     <p>
-     Rotor started as exploration of then freshly introduced variable font format. It presents an unconventional axis — rotation. If you haven't, try to make rotor above rotating by hovering above or clicking on phone. 
-As its name the font can be read from both sides as well. It was designed with thought about interaction with user, when they can decode or encode messages. Rotor is also a story of developing backend tools that currently helping with production. Thanks to studies at
-     <a href="https://typemedia.org/">
+     Rotor started as exploration of then freshly introduced variable font format. It presents an unconventional axis — rotation. If you haven't, try to make rotor above rotating by hovering above or clicking on phone.
+    </p>
+    <p>
+     As its name the font can be read from both sides as well. It was designed with thought on interaction with user, decoding and encoding messages. Rotor is also a story of desperate search for font editor, production technology and finally, thanks to studies at
+     <a href="https://typemedia.org/" target="_blank">
       Type and Media
      </a>
      ,
      <a href="https://www.kabk.nl/">
       KABK
      </a>
-     I was able to automatize most of my workflow. What had to be done by hand in past is now fully automatized. I am planning to implement new axes to make rotor a bit more flexible and animatable. Those axes will be depth, weight, monospaceness &amp; metrics at 90° (either if the glyph keeps the same width during rotation or if it adjusts).
+     . What had to be done by hand in past is now fully automatized, which allows me to focus my labour work on the design part.
+    </p>
+    <p>
+     I am planning to implement new axes to make rotor a bit more flexible, animatable and exciting. Those axes will be depth, weight, monospaceness &amp; metrics at 90° (either if the glyph keeps the same width during rotation or if it adjusts). As it might be hard to get into variable fonts and use it on the web or elsewhere, I am offering my help to anyone who is reading it.
     </p>
    </article>
   </main>

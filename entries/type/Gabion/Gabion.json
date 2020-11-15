@@ -1,6 +1,6 @@
 {   
     "fontName": "Gabion",
-    "buy": "",
-    "try": "#",
+    "buy": false,
+    "try": false,
     "styles": ["Display", "Text"]
 }

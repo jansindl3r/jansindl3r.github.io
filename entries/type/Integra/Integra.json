@@ -1,6 +1,6 @@
 {   
     "fontName": "Integra",
-    "buy": "",
-    "try": "#",
+    "buy": false,
+    "try": false,
     "styles": ["Script", "Grotesque"]
 }

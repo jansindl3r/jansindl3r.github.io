@@ -82,6 +82,10 @@
   margin: 0;
   color: var(--nd-color);
 }
+.entry small {
+  display: inline-block;
+  max-width: 70ch;
+}
 
 #type > *:nth-child(2), #stuff > *:nth-child(2), #cv > *:nth-child(2) {
   border-top-style: solid;

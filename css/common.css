@@ -51,6 +51,9 @@ header #logo {
 }
 header #logo *[data-content]::after, header #logo *[data-content]::before {
   color: black;
+  background: var(--nd-color);
+  padding: 2px;
+  margin: -2px;
   animation: fall 5s cubic-bezier(0.14, -0.22, 0.55, -0.07) infinite;
   animation-delay: 0.5s;
   content: attr(data-content);

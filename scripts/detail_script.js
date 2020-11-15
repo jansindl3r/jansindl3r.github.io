@@ -10,9 +10,10 @@ function sleep(ms) {
 async function move() {
     out = false
     while (!out) {
-        await sleep(10)
-        shift = -(Math.floor((w/2 - x)/25))
-        galleryPics.scroll(galleryPics.scrollLeft+shift, 0)
+        shift = -((w/2 - x)/100)
+        shift = shift * Math.abs(shift)
+        await sleep(40-Math.abs(shift))
+        galleryPics.scroll(galleryPics.scrollLeft+Math.round(shift), 0)
     }
 }
 
