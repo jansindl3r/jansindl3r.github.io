@@ -99,17 +99,6 @@ nav {
     }
 }
 
-main > *, article, nav > *, #nav, #logo > *, #gallery {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-main .canvas-wrapper {
-    padding-left: 0;
-    > div {
-    
-    padding-left: 1rem;
-    }
-}
 
 .top {
     margin-top: 2rem;
@@ -131,6 +120,23 @@ main .canvas-wrapper {
     color: var(--nd-color);
 }
 
+main, header > * > *, nav > * {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+main > *, header > * > *, nav > * {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+main .canvas-wrapper {
+    padding-left: 0;
+    > * {
+        padding-left: 1rem;
+    }
+}
+
 
 $medium: 1080px;
 $small: 500px;
@@ -145,21 +151,19 @@ $small: 500px;
     .entry.font {
         height: 100px;
     }
-    main > *, article, nav > *, #nav, #logo > *, #gallery, hr{
+
+
+    main > *, header > * > *, nav > * {
         padding-left: 3rem;
         padding-right: 3rem;
-        max-width: 1500px;
-        margin-right: auto;
-        margin-left: auto;
     }
-
     main .canvas-wrapper {
         padding-left: 0;
-        > div {
-        padding-left: 3rem;
-        padding-right: 3rem;    
+        > * {
+            padding-left: 3rem;
         }
     }
+
 }
 
 @media screen and (max-width: $small) {
@@ -172,20 +176,6 @@ $small: 500px;
         }
     }
 
-    main > *, article, nav > *, #nav, #logo > *{
-        padding-right: .5rem;
-        padding-left: .5rem;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    main .canvas-wrapper {
-        padding-left: 0;
-        padding-right: 0;
-        > div {
-        padding-left: .5rem;
-        }
-    }
     nav, #nav, #logo {
         text-align: center;
         display: block;

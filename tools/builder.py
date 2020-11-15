@@ -1,5 +1,6 @@
 import markdown
 import json
+import re
 
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
@@ -19,6 +20,10 @@ def prettify(htmlString: str):
 def get_md(path):
     with open(path, 'r') as inputFile:
         html = markdown.markdown(inputFile.read())
+    matches = list(re.finditer(r"<img.*>", html))
+    for match in matches[::-1]:
+        left, right = match.span()
+        html = f"{html[:left]}<div class='pic-wrapper'>{match.group()}</div>{html[right:]}"
     return html
 
 

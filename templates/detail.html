@@ -6,38 +6,28 @@
     {% endfor %}
 {% endblock %}
 {% block content %}
-    <main class="btm">
-        <h1 class="top">{{font_info["fontName"]}}
-            {% if font_info["buy"] or font_info["try"] %}
-            <a href="{{font_info.link}}" target="_blank" class="ndclr">
-                <small>
-                    {% if font_info.try and font_info.buy %}
-                        try & buy
-                    {% elif font_info.try%}
-                        try
-                    {% else %}
-                        buy
-                    {% endif %}
-                </small>
-            </a>
-        {% endif %}
-        </h1>
-        <div id="nav-typefaces">
-            <a href="../{{previous_typeface}}">previous – {{previous_typeface}}</a>
-            <a href="../{{next_typeface}}">next – {{next_typeface}}</a>
-        </div>
-        {% for style in font_info.styles %}
-            <h2 class="top">
-                {{ style }}
-            </h2>
-            <div class="canvas-wrapper">
-                <div>
-                    <div class="canvas" data-style="{{ style }}"></div>
-                </div>
-            </div>
-        {% endfor %}
-    </main>
-    <hr>
+    <main>
+    <h1 class="top">{{font_info["fontName"]}}
+        {% if font_info["buy"] or font_info["try"] %}
+        <a href="{{font_info.link}}" target="_blank" class="ndclr">
+            <small>
+                {% if font_info.try and font_info.buy %}
+                    try & buy
+                {% elif font_info.try%}
+                    try
+                {% else %}
+                    buy
+                {% endif %}
+            </small>
+        </a>
+    {% endif %}
+    </h1>
+
+    <div id="nav-typefaces">
+        <a href="../{{previous_typeface}}">previous – {{previous_typeface}}</a>
+        <a href="../{{next_typeface}}">next – {{next_typeface}}</a>
+    </div>
+    <hr class="top">
     <div id="gallery" class="top btm">
         <div class="pics">
         {% for (type, entry) in slideshow %}
@@ -47,12 +37,6 @@
                     <img src="slideshow/{{entry}}">
                 {% endif %}
         {% endfor %}
-        <!-- 
-            <img height="100%" width="auto" src="slideshow/1.svg">
-            <img height="100%" width="auto" src="slideshow/2.svg">
-            <img height="100%" width="auto" src="slideshow/3.svg">
-            <img height="100%" width="auto" src="slideshow/4.svg">
-        -->
         </div>
         <div class="nav">
             <div onmouseover="move()" onmouseleave="out = true"></div>
@@ -60,17 +44,30 @@
         </div>
     </div>
     <hr>
+    {% for style in font_info.styles %}
+        <h2 class="top">
+            {{ style }}
+        </h2>
+        <div class="canvas-wrapper">
+            <div>
+                <div class="canvas" data-style="{{ style }}"></div>
+            </div>
+        </div>
+    {% endfor %}
+    <hr class="top">
     <article class="top">
+        <h1>Process</h1>
         {{text}}
     </article>
+    </main>
     {% if images_data %}
         <script type=text/javascript>
             var images_data = {{images_data}}
         </script>
-        <script src="{{root}}/scripts/detail_script.js"></script>
-    {% endif %}
-    {% if font_info.javascript %}
+        <script src="{{root}}/scripts/fill_images.js"></script>
+        {% endif %}
+        {% if font_info.javascript %}
         <script src="{{root}}/{{font_info.javascript}}"></script>
-    {% endif %}
-    
+        {% endif %}
+    <script src="{{root}}/scripts/detail_script.js"></script>
 {% endblock %}

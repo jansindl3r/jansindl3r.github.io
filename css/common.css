@@ -97,18 +97,6 @@ nav > * > * {
   display: inline-block;
 }
 
-main > *, article, nav > *, #nav, #logo > *, #gallery {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-main .canvas-wrapper {
-  padding-left: 0;
-}
-main .canvas-wrapper > div {
-  padding-left: 1rem;
-}
-
 .top {
   margin-top: 2rem;
 }
@@ -129,6 +117,23 @@ main .canvas-wrapper > div {
   color: var(--nd-color);
 }
 
+main, header > * > *, nav > * {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+main > *, header > * > *, nav > * {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+main .canvas-wrapper {
+  padding-left: 0;
+}
+main .canvas-wrapper > * {
+  padding-left: 1rem;
+}
+
 @media screen and (min-width: 1080px) {
   header #logo > * {
     display: block;
@@ -138,20 +143,16 @@ main .canvas-wrapper > div {
     height: 100px;
   }
 
-  main > *, article, nav > *, #nav, #logo > *, #gallery, hr {
+  main > *, header > * > *, nav > * {
     padding-left: 3rem;
     padding-right: 3rem;
-    max-width: 1500px;
-    margin-right: auto;
-    margin-left: auto;
   }
 
   main .canvas-wrapper {
     padding-left: 0;
   }
-  main .canvas-wrapper > div {
+  main .canvas-wrapper > * {
     padding-left: 3rem;
-    padding-right: 3rem;
   }
 }
 @media screen and (max-width: 500px) {
@@ -161,22 +162,6 @@ main .canvas-wrapper > div {
   }
   .entry.font .font-title {
     font-size: 60px;
-  }
-
-  main > *, article, nav > *, #nav, #logo > * {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  main .canvas-wrapper {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  main .canvas-wrapper > div {
-    padding-left: 0.5rem;
   }
 
   nav, #nav, #logo {

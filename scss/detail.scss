@@ -10,16 +10,6 @@
     }
 }
 
-article {
-    p {
-        margin-top: 0;
-        margin-bottom: 1em;
-    }
-    h1 {
-        margin: 0.2rem 0;
-    }
-}
-
 .canvas > div > div > img {
     height: 100%;
     user-select: none;
@@ -32,20 +22,33 @@ hr {
 }
 
 article {
-    img {
+    h1 {
+        margin: 0.2rem 0;
+    }
+    .pic-wrapper {
         margin-top: 1.5em;
-        width: 100%;
         background: var(--nd-color);
-        mix-blend-mode: multiply;
+        img {
+            width: 100%;
+            mix-blend-mode: multiply;
+            display: block;
+        }
         & + em {
+            margin-top: .5em;
             margin-bottom: 1.5em;
             font-size: 0.8em;
+            display: block;
         }
+    }
+    p {
+        margin-top: 0;
+        margin-bottom: 1em;
     }
     a {
         text-decoration: underline;
         color: var(--nd-color);
     }
+
 }
 
 #gallery {
@@ -72,20 +75,6 @@ article {
                 }
             }
     }
-    // @media(hover:none) {
-    //     &::after {
-    //         box-sizing: content-box;
-    //         content: "dawda";
-    //         background: red;
-    //         position: absolute;
-    //         left: 0;
-    //         top: 0;
-    //         height: 100%;
-    //         width: 100%;
-    //         opacity: 0.5;
-
-    //     }
-    // }
     .pics {
         border: #000 2px;
         border-top-style: solid;
@@ -96,8 +85,8 @@ article {
         font-size: 0;
         > * {
             margin-left: -1px;
-            color: #fff;
-            display: inline;
+            display: inline-block;
+            width: auto;
             position: relative;
             height: 100%;
             vertical-align: top;
@@ -112,7 +101,7 @@ article {
 }
 
 .canvas-wrapper {
-    box-sizing: border-box;
+    box-sizing: content-box;
     display: block;
     > div {
         overflow: hidden;
