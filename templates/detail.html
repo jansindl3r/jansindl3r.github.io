@@ -29,16 +29,16 @@
     </div>
     <hr class="top">
     <div id="gallery" class="top btm">
-        <div class="pics">
+        <div id="pics">
         {% for (type, entry) in slideshow %}
                 {% if type == 'embed' %}
                     <div>{{entry}}</div>
                 {% else %}
-                    <img src="slideshow/{{entry}}">
+                    <img height="50vh" src="slideshow/{{entry}}">
                 {% endif %}
         {% endfor %}
         </div>
-        <div class="nav">
+        <div id="nav">
             <div onmouseover="move()" onmouseleave="out = true"></div>
             <div onmouseover="move()" onmouseleave="out = true"></div>
         </div>

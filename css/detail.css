@@ -46,55 +46,80 @@ article a {
   color: var(--nd-color);
 }
 
+@keyframes slide {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: 100px;
+  }
+}
 #gallery {
   height: 50vh;
   white-space: nowrap;
 }
+#gallery #nav {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  font-size: 0;
+}
 @media (hover: hover) {
-  #gallery .nav {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    display: inline-block;
-    top: 0;
-    left: 0;
-    font-size: 0;
-  }
-  #gallery .nav > * {
+  #gallery #nav > * {
     position: relative;
     display: inline-block;
     width: calc(50%);
     height: 100%;
     cursor: url("arrow_left.svg") 0 50, w-resize;
   }
-  #gallery .nav > *:last-child {
+  #gallery #nav > *:last-child {
     cursor: url("arrow_right.svg") 128 50, e-resize;
   }
 }
-#gallery .pics {
+@media (hover: none) {
+  #gallery #nav {
+    pointer-events: none;
+  }
+  #gallery #nav.learning::after {
+    font-size: 0;
+    content: "";
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background: url("arrow_right.svg");
+    background-position: right center;
+  }
+}
+#gallery #pics {
   border: #000 2px;
   border-top-style: solid;
   border-bottom-style: solid;
   height: 100%;
   display: block;
-  overflow: scroll;
+  overflow-x: scroll;
   font-size: 0;
 }
-#gallery .pics > * {
+#gallery #pics > * {
   margin-left: -1px;
   display: inline-block;
   width: auto;
   position: relative;
   height: 100%;
   vertical-align: top;
+  overflow: hidden;
 }
 @media (hover: hover) {
-  #gallery .pics {
+  #gallery #pics {
     overflow: hidden;
   }
 }
 @media (hover: none) {
-  #gallery .pics {
+  #gallery #pics {
     overflow: scroll;
   }
 }

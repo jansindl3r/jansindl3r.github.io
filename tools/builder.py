@@ -16,7 +16,6 @@ env.lstrip_blocks = True
 def prettify(htmlString: str):
     return BeautifulSoup(htmlString, 'html.parser').prettify()
 
-
 def get_md(path):
     with open(path, 'r') as inputFile:
         html = markdown.markdown(inputFile.read())

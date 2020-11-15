@@ -1,4 +1,4 @@
-galleryPics = document.querySelector("#gallery .pics")
+galleryPics = document.querySelector("#gallery #pics")
 var out = true
 var x = null
 var w = document.body.clientWidth || window.innerWidth 
@@ -22,4 +22,15 @@ window.onmousemove = (event) => {
 
 window.onresize = () => {
     w = document.body.clientWidth || window.innerWidth 
+}
+
+
+if (!localStorage["learnt"]) {
+    pics = document.querySelector("#gallery #pics")
+    nav = document.querySelector("#gallery #nav")
+    nav.classList.add("learning")
+    pics.onscroll = () => {
+        localStorage["learnt"] = true
+        nav.classList.remove("learning")
+    }
 }

@@ -51,18 +51,27 @@ article {
 
 }
 
+@keyframes slide {
+    from {
+        margin-left: 0;
+    }
+    to {
+        margin-left: 100px;
+    }
+}
+
 #gallery {
     height: 50vh;
     white-space: nowrap;
-    @media(hover:hover) {
-        .nav {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            display: inline-block;
-            top: 0;
-            left: 0;
-            font-size: 0;
+    #nav {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: inline-block;
+        top: 0;
+        left: 0;
+        font-size: 0;
+        @media(hover:hover) {
                 > * {
                     position: relative;
                     display: inline-block;
@@ -74,14 +83,28 @@ article {
                     }
                 }
             }
+        @media(hover: none) {
+            pointer-events: none;
+            &.learning::after {
+                font-size: 0;
+                content: "";
+                height: 100%;
+                width: 100%;
+                left: 0;
+                top: 0;
+                position: absolute;
+                background: url("arrow_right.svg");
+                background-position: right center;
+            } 
+        }
     }
-    .pics {
+    #pics {
         border: #000 2px;
         border-top-style: solid;
         border-bottom-style: solid;
         height: 100%;
         display: block;
-        overflow: scroll;
+        overflow-x: scroll;
         font-size: 0;
         > * {
             margin-left: -1px;
@@ -90,6 +113,8 @@ article {
             position: relative;
             height: 100%;
             vertical-align: top;
+            overflow: hidden;
+
         }
         @media(hover: hover) {
             overflow: hidden;

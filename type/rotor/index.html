@@ -85,14 +85,16 @@
    </div>
    <hr class="top"/>
    <div class="top btm" id="gallery">
-    <div class="pics">
+    <div id="pics">
      <div>
       <div style="font-size: 50vh; 
 animation: rotate 5s infinite;
 font-family: rotor; 
-color: var(--nd-color);
-background: black;
+color: #000;
+background: var(--nd-color);
 margin-top: -10vh;
+display: inline-block;
+overflow: hidden;
 ">
        <div>
         rotor
@@ -102,17 +104,16 @@ margin-top: -10vh;
     position: absolute; 
     left: 0;
     top: 0;
-    color: #fff;
-    ">
+    color: #fff;">
         rotor
        </div>
       </div>
      </div>
-     <img src="slideshow/2.svg"/>
-     <img src="slideshow/3.svg"/>
-     <img src="slideshow/5.svg"/>
+     <img height="50vh" src="slideshow/2.svg"/>
+     <img height="50vh" src="slideshow/3.svg"/>
+     <img height="50vh" src="slideshow/5.svg"/>
     </div>
-    <div class="nav">
+    <div id="nav">
      <div onmouseleave="out = true" onmouseover="move()">
      </div>
      <div onmouseleave="out = true" onmouseover="move()">
