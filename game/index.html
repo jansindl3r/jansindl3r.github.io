@@ -4,46 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./supply.css">
     <style>
         body {
             padding: 0;
             margin: 0;
             background: #0f0;
+            font-family: "Helvetica";
+            overflow: hidden;
         }
-
-        @font-face {
-            font-family: "rotor";
-            src: url("../entries/type/rotor/rotor-VF.ttf")  }
-        @font-face {
-            font-family: "rotor overlay";
-            src: url("../entries/type/rotor/rotor-VF-overlay.ttf")  }
-
-        @keyframes rotate {
-            0% {
-                
-                font-variation-settings: "rttx" 0;                
-                animation-timing-function: cubic-bezier(.4, .2, .8, .4);
-            }
-            25% {
-                
-                font-variation-settings: "rttx" 90;                
-                animation-timing-function: cubic-bezier(.2, .4, .4, .8);
-            }
-            50% {
-                
-                font-variation-settings: "rttx" 180;                
-                animation-timing-function: cubic-bezier(.4, .2, .8, .4);
-            }
-            75% {
-                font-variation-settings: "rttx" 270;                
-                animation-timing-function: cubic-bezier(.2, .4, .4, .8);
-            }
-            100% {
-                
-                font-variation-settings: "rttx" 360;                
-            }
+        #hiScore {
+            margin: 0 auto;
         }
-
+        #hiScore > * > * {
+            width: 50%;
+            display: inline-block;
+        }
+        #hiScore > * > *:first-child {
+            text-align: right;
+        }
         #game {
             text-rendering: optimizeSpeed;
             z-index: 1;
@@ -81,7 +60,6 @@
 
         #ui {
             font-size: 50px;
-            font-family: "rotor";
             position: absolute;
             top: 50px;
             width: 100%;
@@ -141,6 +119,19 @@
         }
 
 
+        #player-form {
+            position: absolute;
+            padding: 2em;
+            top: 50%;
+            left: 50%;
+            display: block;
+            z-index: 10000;
+            transform: translate(-50%, -50%);
+            background: #0f0;
+            display: none;
+        }
+
+
     </style>
 
 
@@ -149,6 +140,7 @@
     <div id="style">
 
     </div>
+    <div id="hiScore"></div>
     <div id="message" class="full"></div>
     <div id="game" data-content=""></div>
     <div id="ui">
@@ -156,9 +148,60 @@
         <div id="lives"></div>
         <div id="legend">Tap, click or press space when displayed letter is in angle of 0°. Be careful, some letters have questionable form!</div>
     </div>
+    
+    <form id="player-form" onsubmit="write" autocomplete="off">
+        <label for="player">player</label>
+        <input text="text" id="player" name="player" value="" placeholder="name" autocomplete="false">
+    </form>
 </body>
 
 <script>
+
+    const hiScore = document.getElementById("hiScore")
+    const form = document.getElementById("player-form")
+    var data 
+    function writeScores(req){
+        hiScore.innerHTML = ""
+        data = JSON.parse(req.responseText)
+
+        for (let i=0; i < data.length; i++) {
+            wrapper = document.createElement("div")
+            div = document.createElement("div")
+            div.innerHTML = `${data[i]["username"]}`
+            wrapper.appendChild(div)
+            div = document.createElement("div")
+            div.innerHTML = `${data[i]["score"]}`
+            wrapper.appendChild(div)
+            hiScore.appendChild(wrapper)
+        }
+    }
+
+    const req = new XMLHttpRequest()
+    const url = "http://0.0.0.0:5000/get_scores"
+
+    req.open("GET", url)
+    req.send()
+
+    req.onreadystatechange = (e) => {
+        if (req.readyState == 4 && req.status == 200) {
+            hiScore.innerHTML = ""
+            writeScores(req)
+        }
+    }
+
+    function postScore(player, score) {
+        const req = new XMLHttpRequest()
+        const url = `http://0.0.0.0:5000/write_score?username=${player}&score=${score}`
+        req.open("POST", url)
+        req.send()
+        req.onreadystatechange = (e) => {
+            if (req.readyState == 4 && req.status == 200) {
+                data = JSON.parse(req.responseText)
+                writeScores(req)
+            }
+        }
+    }
+
     const getLetter = () => {
         const letters = ['r', 't', 'a', 'n', 's', 'm', 'f']
         return letters[Math.floor(Math.random()*letters.length)]
@@ -208,7 +251,7 @@
             duration = speed * 0.9
         }
         else {
-            gained = -1
+            gained = 0
             color = "red"
             duration = speed * 1.15
             lives -= 1
@@ -230,6 +273,13 @@
             game.style.animationPlayState = "paused"
             document.body.style.background = "red"
             over = true
+            vals = [0]
+            for (let i = 0; i < data.length; i++) {
+                vals.push(data[i]["score"])
+            }
+            if (score > Math.min(...vals)) {
+                form.style.display = "block"
+            }
         }
         else {
             message.innerHTML = mark+gained
@@ -241,7 +291,12 @@
         message.classList.add("message-show")
     }
     game.onclick = callback
-    window.onkeydown = callback
+    form.onsubmit = (e) => {
+        e.preventDefault()
+        player = document.getElementById("player").value
+        postScore(player, score)
+        form.style.display = "none"
+    }
 </script>
 
 </html>

@@ -1,29 +1,11 @@
 <?php
 
-require_once '../DB.php';
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET');
+header("Access-Control-Allow-Headers: X-Requested-With, content-type, access-control-allow-origin, authorization");
 
-class Game
-{
-    private $conn;
-
-    public function __construct()
-    {
-        $database = new DB();
-        $this->conn = $database->connect();
-    }
-
-    public function get_scores()
-    {
-        $query = file_get_contents('./get_scores.sql');
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute();
-        $todo_arr = [];
-        while ($arr = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            array_push($todo_arr, $arr);
-        }
-        return array_reverse($todo_arr);
-    }
-}
+require_once '../api.php';
 
 $game = new Game();
 $result = $game -> get_scores();

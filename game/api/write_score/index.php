@@ -1,28 +1,11 @@
 <?php
 
-require_once '../DB.php';
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST');
+header("Access-Control-Allow-Headers: X-Requested-With, content-type, access-control-allow-origin, authorization");
 
-class Game
-{
-    private $conn;
-
-    public function __construct()
-    {
-        $database = new DB();
-        $this->conn = $database->connect();
-    }
-
-    public function write_score()
-    {
-        $query = file_get_contents(__DIR__ . '/write_score.sql');
-        $stmt = $this->conn->prepare($query);
-        $this->username = htmlspecialchars($_REQUEST["username"]);
-        $this->score = intval(htmlspecialchars($_REQUEST["score"]));
-        $stmt->bindParam(':score', $this->score);
-        $stmt->bindParam(':username', $this->username);
-        $stmt->execute();
-    }
-}
+require_once '../api.php';
 
 $game = new Game();
 $result = $game -> write_score();
