@@ -62,6 +62,7 @@ article {
 #gallery {
     height: 50vh;
     white-space: nowrap;
+    text-rendering: optimizeSpeed;
     #nav {
         position: absolute;
         height: 100%;

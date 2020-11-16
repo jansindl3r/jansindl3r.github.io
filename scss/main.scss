@@ -2,6 +2,7 @@
     position: relative;
     font-family: "rotor";
     animation: rotate 2s infinite;
+    text-rendering: optimizeSpeed;
     &::before {
         content: attr(data-font-name);
         font-family: "rotor overlay";
