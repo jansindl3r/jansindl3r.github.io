@@ -12,6 +12,9 @@ parser.add_argument('words', type=lambda x:x.split(' '))
 parser.add_argument('outdir', type=Path)
 args = parser.parse_args()
 
+def lower_file_name(stem):
+    stem = [char if char.islower() else f"_{char.lower()}" for char in stem]
+    return "".join(stem)
 
 fonts = []
 for font in args.fonts:
@@ -40,6 +43,7 @@ def get_style_name(font):
 
 for i, word in enumerate(args.words):
 
+    key = lower_file_name(word)
     fontSize = 1000
     font = fonts[i%len(fonts)]
     sub_folder = font.parent.stem
@@ -68,12 +72,12 @@ for i, word in enumerate(args.words):
 
     db.newPage(canvas_width+cutoff_left+cutoff_right, canvas_height)
     db.drawPath(bez)
-    svg_out = args.outdir/sub_folder/f"{word}.svg"
+    svg_out = args.outdir/sub_folder/f"{key}.svg"
     if not svg_out.parent.exists():
         svg_out.parent.mkdir()
     db.saveImage(str(svg_out))
 
-    data.setdefault(sub_folder, {})[svg_out.name] = [
+    data.setdefault(sub_folder, {})[key] = [
         round(cutoff_left),
         round(cutoff_right),
         round(content_width),
