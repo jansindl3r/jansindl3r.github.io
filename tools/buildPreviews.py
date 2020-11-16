@@ -13,7 +13,7 @@ parser.add_argument('outdir', type=Path)
 args = parser.parse_args()
 
 def lower_file_name(stem):
-    stem = [char if char.islower() else f"_{char.lower()}" for char in stem]
+    stem = [char if char.islower() else f"{char.lower()}_" for char in stem]
     return "".join(stem)
 
 fonts = []
