@@ -1,4 +1,4 @@
-I started working on Integra during my studies at UMPRUM. Redesign of the classic Futura with additional script style. This loosely related addition was originally designed much later after Renner's Futura, exactly by Edwin W. Shaar in 1954. This interesting, yet undiscovered curiosity fascinated me. Putting this spice together with redesign of into a bunch.
+I started working on Integra during my studies at UMPRUM. Redesign of the classic Futura with additional script style. This loosely related addition was originally designed much later after Renner's Futura, exactly by Edwin W. Shaar in 1954. This interesting, yet undiscovered curiosity fascinated me.
 
 ![](radek.jpg)
 *first time I saw Futura Script was when Radek Sidun sent me a picture of it. What a discovery!*

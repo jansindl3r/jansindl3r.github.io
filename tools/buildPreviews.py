@@ -23,13 +23,19 @@ data = {
 def get_style_name(font):
     ttfont = TTFont(font)['name']
     style_name = None
-    try:
-        style_name = ttfont.getName(17, 1, 0).toStr()
-    except:
+    entries = (
+        (17, 1, 0),
+        (17, 3, 1),
+        (2, 3, 1)
+    )
+    for entry in entries:
         try:
-            style_name = ttfont.getName(17, 3, 1).toStr()
+            style_name = ttfont.getName(*entry).toStr()
+            break
         except:
-            style_name = " "
+            pass
+    else:
+        style_name = " "
     return style_name
 
 for i, word in enumerate(args.words):

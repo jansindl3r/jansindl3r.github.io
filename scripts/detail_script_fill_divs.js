@@ -1,5 +1,6 @@
 
-let words = "daily Man not in amusing cannot still I on Law worlds for minds wisdom many work about it by may now but of disavow his thus knowall Flatland as say critics thinks has This can a who constrains says thing isworking that For all him In part far always hand must It Circularor doing with which without and whicha aristocratic to is facts".replace('\n', '').split(' ')
+let words = "daily Man not in amusing cannot still I on Law worlds for minds wisdom many work about it by and may as now but of disavow his thus know all Flatland as naturally say critics thinks has This can a who constrains says his to thing is working that and For all him In part far always hand must It Circularor doing with which without and which a aristocratic to is that facts"
+words = words.split(' ')
 
 const canvas = document.getElementsByClassName("canvas")[0]
 let line = document.createElement('div')

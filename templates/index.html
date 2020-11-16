@@ -6,7 +6,7 @@
 <script src="scripts/script.js"></script>
 <main id="index btm">
     <div id="type">
-        <div class="top btm strong ndclr">type</div>
+        <h3 class="top btm strong ndclr">type</h3>
         {% for entry in type_entries %}
         <a href="type/{{type_entries[entry][0]}}" class="entry hvr font brdr" data-font="{{type_entries[entry][1]}}">
             {% if type_entries[entry][1] %}
@@ -21,7 +21,7 @@
         {% endfor %}
     </div>
     <div id="stuff">
-        <div class="top btm strong ndclr">stuff</div>
+        <h3 class="top btm strong ndclr">stuff</h3>
         {% for entry in stuff_entries %}
         <div class="entry stuff brdr">
             <div onclick="roll(this)" class="hvr">
@@ -37,7 +37,7 @@
         {% endfor %}
     </div>
     <div id="cv" class="btm">
-        <div class="top btm strong ndclr">about</div>
+        <h3 class="top btm strong ndclr">about</h3>
         <div class="entry"><div><div><span class="date ndclr">2019 – 2020</span><strong>Type and Media, KABK, The Hague</strong></div><small><em>A great year of studying type and programming. My final project was typeface called Gabion, it is output of a path of searching and discovering possibilities of type family planning.</em></small></div></div>
         <div class="entry"><div><div><span class="date ndclr">2019, 2 months</span><strong>Internship at LucasFonts</strong></div><small><em>I was involved in designing pictograms for a german company, production of variable fonts and producing multiple websites that served as icon finder, font presentation & font tester.</em></small></div></div>
         <div class="entry"><div><div><span class="date ndclr">2018, 3 months</span><strong>Internship at LucasFonts</strong></div><small><em>Helping with production of a typeface for a car brand and redesigning typeface for a german newspaper.</em></small></div></div>
