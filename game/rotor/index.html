@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./supply.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+</head>
+<body>
+    <h1 id="logo" class="wht">rotorada</h1>
+    <div id="style">
+    </div>
+    <div id="ui" class="top">
+        <div>
+            <h1 class="top top wht">
+                highest scores
+            </h1>
+            <div id="hiScore" class="top btm">
+            </div>
+        </div>
+        <div>
+            <h1 class="top btm wht">
+                your score
+            </h1>
+            <div class="top">
+                <div><div>score</div><div id="score"></div></div>
+                <div><div>lives</div><div id="lives"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="message" class="full"></div>
+    <div id="hra"><div><div>r</div><div>r</div></div></div>
+
+    <div id="legend" class="top">
+        <div>
+            <span id="tap">Tap</span><span id="click">Click</span> the letter above when it's under angle of regular text. Careful, there are unusual forms!
+            <small class="rules">
+                <ul>
+                    <li>Get as many points as possible </li>
+                    <li>You get 1 point by getting it right </li>
+                    <li>You lose 1 life by missing it</li>
+                    <li>Speed and size increase with every gained point</li>
+                </ul>
+            </small>
+        </div>
+    </div>
+    
+    <form id="player-tabulka" onsubmit="write" autocomplete="off">
+        <label for="player">player</label>
+        <input text="text" id="player" name="player" value="" placeholder="name" autocomplete="false">
+    </form>
+</body>
+
+<script src="./script.js"></script>
+
+</html>

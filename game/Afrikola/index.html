@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 20px;
+            margin: 0;
+            padding: 0;
+            background: #00ff00;
+        }
+        #game {
+            font-family: monospace;
+            font-size: 15vw;
+            cursor: pointer;
+            user-select: none;
+            text-align: center;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .line > div {
+            display: inline-block;
+        }
+        .line > div[data-value="1"] {
+            font-family: sans-serif;
+        }
+        .line > div[data-value="2"] {
+            font-family: serif;
+        }
+        .line > div[data-value="3"] {
+            font-family: monospace;
+        }
+        .line > div[data-value="4"] {
+            font-family: cursive;
+        }
+        .line > div[data-value="0"] {
+            font-family: fantasy;
+        }
+        .line > div[data-value="5"] {
+            font-family: sans-serif;
+            font-style: italic;
+        }
+        button {
+            font-size: inherit;
+            padding: 2ch;
+        }
+
+        .score * {
+            font-size: 50%;
+            display: inline-block;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" onclick="submitCombination()">submit</button>
+    <div id="game"></div>
+</body>
+<script>
+    const game = document.getElementById("game")
+    content = "test"
+    combination = []
+    for (let i=0; i < 4; i++) {
+        combination.push(Math.round(Math.random()*5))
+    }
+    const createLine = () => {
+        line = document.createElement("div")
+        line.className = "line"
+        for(let i=0; i<4; i++) {
+        div = document.createElement("div")
+        div.dataset["value"] = 0
+        div.innerHTML += content[i] 
+        line.appendChild(div)
+        }
+        game.appendChild(line)
+    }
+    createLine()
+    document.onclick = (e) => {
+        target = e.target
+        if (target.parentNode.parentNode == game) {
+            target.dataset["value"] = parseInt(target.dataset["value"]) + 1
+            target.dataset["value"] = target.dataset["value"] % 6
+        }
+
+    }
+    const submitCombination = () => {
+        lastLine = game.lastChild
+        correctCombination = combination.slice()
+        currentCombination = []
+        for (i=0; i < lastLine.children.length; i++) {
+            currentCombination.push(parseInt(lastLine.children[i].dataset["value"]))
+        }
+        matched = []
+        for (let i=0; i<4;i++) {
+            if (currentCombination[i] == correctCombination[i]) {
+                matched.push(i)
+            } 
+        }
+        for (let i=0; i < matched.length; i++) {
+            currentCombination = currentCombination.splice(i, 1)
+            correctCombination = correctCombination.splice(i, 1)
+        }
+        contains = []
+        for (let i =0; i<4; i++) {
+            searched = currentCombination[i]
+            if (correctCombination.includes(searched)) {
+                correctCombination = correctCombination.splice(correctCombination.indexOf(searched), 1)
+                currentCombination = currentCombination.splice(currentCombination.indexOf(searched), 1)
+                contains += 1
+            }
+        }
+
+        score = document.createElement("div")
+        score.className = "score"
+        score_matched = document.createElement("div")
+        score_matched.innerHTML = matched.length
+        score_contains = document.createElement("div")
+        score_contains.innerHTML = contains
+        score.appendChild(score_matched)
+        score.appendChild(score_contains)
+        lastLine.appendChild(score)
+
+        createLine()
+    }
+</script>
+</html>

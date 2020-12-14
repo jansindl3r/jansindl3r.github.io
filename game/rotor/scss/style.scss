@@ -1,0 +1,215 @@
+#logo {
+    margin: 0;
+    padding: 0;
+    font-family: "typefacesss";
+    font-variation-settings: "wght" 450;
+    font-size: 3rem;
+    animation: rotate 2s infinite;
+}
+
+.wht {
+    color: #fff;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: #0f0;
+    font-family: "Helvetica";
+    overflow: hidden;
+    text-align: center;
+    font-size: 18px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+.btm {
+    margin-bottom: .5rem;
+}
+
+.top {
+    margin-top: .2em;
+}
+
+#ui {
+    width: 100%;
+    position: relative;
+    h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 1.2em;
+    }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 500px;
+    margin: 0 auto;
+    > div {
+        > div {
+            > div {
+                display: inline-block;
+                > div {
+                    &:first-child {
+                        text-align: right;
+                        padding-right: .5em;
+                        font-weight: 900;
+                    }
+                    &:last-child {
+                        text-align: left;
+                        padding-left: .5em;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@keyframes shake {
+    0% {
+        margin-bottom: -2vmin;
+    }
+    30% {
+        margin-bottom: -2vmin;
+    }
+    31% {
+        margin-bottom: 2vmin;
+    }
+    99% {
+        margin-bottom: -2vmin;
+    }
+    100% {
+        margin-bottom: 0;
+    }
+}
+
+#hra {
+    text-rendering: optimizeSpeed;
+    z-index: 1;
+    font-family: "typefacesss";
+    font-size: 70vmin;
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: rotate(0);
+    -moz-osx-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    animation: rotate 4s infinite;
+    // font-variation-settings: "wght" 20, 'RTTX' 45;
+    > * {
+        & > div {
+            transform: translate(-50%, -51%);
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            &:first-child {
+                color: #fff;
+                animation: rotate 4s infinite;
+            }
+            &:last-child {
+                color: #000;
+                animation: rotate-overlay 4s infinite;
+            }
+        }
+    }
+    &.shake {
+        transform-origin: left top;
+        animation: shake .2s linear alternate;
+
+    }
+}
+
+
+
+
+@keyframes message {
+    0% {
+        margin-top: 0;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        margin-top: -50vh;
+        opacity: 0;
+    }
+}
+
+#message {
+    font-family: "typefacesss";
+    position: absolute;
+    font-size: 4rem;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.message-show {
+    animation: message 2s ease-in;
+}
+
+#player-tabulka {
+    position: absolute;
+    padding: 2em;
+    top: 50%;
+    left: 50%;
+    display: block;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    background: #0f0;
+    display: none;
+}
+
+#legend {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    padding: .2em;
+    display: block;
+    width: 100%;
+    > div {
+        max-width: 70ch;
+        margin: 0 auto;
+        small.rules {
+            display: block;
+            margin-top: .2em;
+            ul {
+                list-style-type: none;
+            }
+        }
+    }
+}
+
+#click {
+    display: none;
+}
+
+@media (hover:hover) {
+    #click {
+        display: inline;
+    }
+    #tap {
+        display: None;
+    }
+}
+

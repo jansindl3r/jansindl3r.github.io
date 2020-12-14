@@ -1,0 +1,65 @@
+@keyframes rotate {
+    0% {
+        font-variation-settings: "wght" 550,  "RTTX" 0, "DPTH" 20, "OFST" 0;                
+        animation-timing-function: cubic-bezier(.5, .1, .9, .5);
+    }
+    25% {
+        font-variation-settings: "wght" 550, "RTTX" 90, "DPTH" 20, "OFST" 0;                
+        animation-timing-function: cubic-bezier(.1, .5, .5, .9);
+    }
+    50% {
+        font-variation-settings: "wght" 550, "RTTX" 180, "DPTH" 20, "OFST" 0;                
+        animation-timing-function: cubic-bezier(.5, .1, .9, .5);
+    }
+    75% {
+        font-variation-settings: "wght" 550, "RTTX" 90, "DPTH" 20, "OFST" 0;                
+        animation-timing-function: cubic-bezier(.1, .5, .5, .9);
+    }
+    100% {
+        font-variation-settings: "wght" 550, "RTTX" 0, "DPTH" 20, "OFST" 0;                
+    }
+}
+
+@keyframes rotate-overlay {
+    0% {
+        font-variation-settings: "wght" 550, "RTTX" 0, "DPTH" 0, "OFST" 10;                
+        animation-timing-function: cubic-bezier(.5, .1, .9, .5);
+    }
+    25% {
+        font-variation-settings: "wght" 550, "RTTX" 90, "DPTH" 0, "OFST" 10;
+        animation-timing-function: cubic-bezier(.1, .5, .5, .9);
+    }
+    50% {
+        font-variation-settings: "wght" 550, "RTTX" 180, "DPTH" 0, "OFST" 10;                
+        animation-timing-function: cubic-bezier(.5, .1, .9, .5);
+    }
+    50.001% {
+        font-variation-settings: "wght" 550, "RTTX" 180, "DPTH" 0, "OFST" -10;                
+        animation-timing-function: cubic-bezier(.5, .1, .9, .5);
+    }
+    75% {
+        font-variation-settings: "wght" 550, "RTTX" 90, "DPTH" 0, "OFST" -10;                
+        animation-timing-function: cubic-bezier(.1, .5, .5, .9);
+    }
+    100% {
+        font-variation-settings: "wght" 550, "RTTX" 0, "DPTH" 0, "OFST" -10;                
+    }
+}
+
+@keyframes fall {
+    0% {
+        margin-top: 0px;
+    }
+    10% {
+        margin-top: 50px;
+    }
+    100% {
+        margin-top: 50px;
+    }
+}
+
+
+@font-face {
+    font-family: "typefacesss";
+    src: url("Arial.woff2") format("woff2");
+}

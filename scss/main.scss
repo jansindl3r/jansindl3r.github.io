@@ -1,13 +1,19 @@
 .entry span[data-font-name] {
     position: relative;
     font-family: "rotor";
-    animation: rotate 2s infinite;
-    text-rendering: optimizeSpeed;
+    animation: rotate 4s infinite;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: none;
+
     &::before {
         content: attr(data-font-name);
         font-family: "rotor overlay";
         color: var(--nd-color);
         position: absolute;
+        text-rendering: inherit;
+        -webkit-font-smoothing: inherit;
     }
 } 
 

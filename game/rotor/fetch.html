@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    fetch("http://rotor.jecool.net/get_scores/", {
+        mode: 'cors',
+        method: 'GET', // *GET, POST, PUT, DELETE, etc.
+        headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+    })
+.then(function(response) {
+    return response.json()
+})
+.then(function(jsonResponse) {
+   console.log(jsonResponse)
+})
+.catch(function(error) {
+  console.log('Looks like there was a problem: \n', error);
+});
+
+</script>
+</html>
