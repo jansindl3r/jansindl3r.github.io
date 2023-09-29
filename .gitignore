@@ -2,3 +2,4 @@
 *.ttf
 *.ttx
 .DS_Store
+venv

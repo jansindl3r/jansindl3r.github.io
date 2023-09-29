@@ -1,4 +1,6 @@
 {
+    "nodesignfoundry": ["nodesignfoundry.com", "Library of font filters", false],
+    "lics": ["Lics.dk", "Front-End development, Next.js", "20-09-2023"],
     "extensions": ["Extensions", "for RoboFont and a tool for command line", false],
     "workshop_scholastika": ["Workshop at Scholastika", "lecture and workshop on variable fonts and type", "9-11-2020"],
     "this_website": ["This website", "uses Python to generate static website", "12-11-2020"],
